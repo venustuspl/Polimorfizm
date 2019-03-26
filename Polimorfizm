@@ -1,0 +1,55 @@
+public class Polimorfizm {
+    public static void main(String[] args){
+
+allCars aCars = new allCars();
+aCars.przypisz();
+        aCars.wypisz();
+//System.out.println(aCars.tab[1]);
+
+    }
+}
+
+
+ interface Cars {
+    public void drive();
+}
+
+class Audi implements Cars{
+    @Override
+    public void drive() {
+        System.out.println("Audi");
+    }
+}
+
+ class Bentley implements Cars{
+    @Override
+    public void drive() {
+        System.out.println("Bentley");
+    }
+}
+
+ class VW implements Cars{
+    @Override
+    public void drive() {
+        System.out.println("VW");
+    }
+}
+
+class allCars {
+    Cars[] tab = new Cars[3];
+    public void przypisz() {
+
+
+        tab[0] = new Audi();
+        tab[1] = new VW();
+        tab[2] = new Bentley();
+
+    }
+
+    public void wypisz() {
+        System.out.println(tab[0]);
+        System.out.println(tab[1]);
+        System.out.println(tab[2]);
+
+    }
+}
